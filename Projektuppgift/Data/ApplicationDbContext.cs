@@ -9,7 +9,7 @@ public class ApplicationDbContext : DbContext
 
     }
 
-    public DbSet<FacilityModel> Facilities { get; set; } = null!;
-    public DbSet<AssociationModel> Associations { get; set; } = null!;
-    public DbSet<BookingModel> Bookings { get; set; } = null!;
+    public DbSet<Facility> Facilities { get; set; } = null!;
+    public DbSet<Association> Associations { get; set; } = null!;
+    public DbSet<Booking> Bookings { get; set; } = null!;
 }

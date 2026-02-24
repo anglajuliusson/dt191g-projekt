@@ -1,14 +1,14 @@
 namespace Projektuppgift.Models;
 
-public class BookingModel
+public class Booking
 {
     public int BookingId { get; set; }
 
     public int FacilityId { get; set; }
-    public FacilityModel Facility { get; set; } = null!;
+    public Facility Facility { get; set; } = null!;
 
     public int AssociationId { get; set; }
-    public AssociationModel Association { get; set; } = null!;
+    public Association Association { get; set; } = null!;
 
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
