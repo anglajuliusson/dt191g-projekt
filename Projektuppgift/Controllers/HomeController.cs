@@ -9,5 +9,17 @@ namespace Projektuppgift.Controllers
         {
             return View();
         }
+        public IActionResult Associations()
+        {
+            return View();
+        }
+        public IActionResult Facilities()
+        {
+            return View();
+        }
+        public IActionResult Bookings()
+        {
+            return View();
+        }
     }
 }
