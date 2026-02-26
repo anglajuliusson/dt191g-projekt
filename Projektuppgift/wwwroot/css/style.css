@@ -35,20 +35,63 @@ nav ul {
     justify-content: center;
 }
 /* Global design för main */
+main {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 main h2 {
     color: rgb(0, 0, 121);
     font-size: 30px;
+    margin-bottom: 1.5em;
 }
 /* Index - main */
 .index-main {
     padding: 5em;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 .index-main p {
     max-width: 500px;
     margin: auto;
     text-align: left;
     margin-bottom: 2em;
+}
+
+/* Associations - main */
+.associations-main {
+    padding: 2em;
+    margin-bottom: 5em;
+}
+.table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table thead th {
+    background-color: rgb(0, 0, 121);
+    color: white;
+    text-align: left;
+    padding: 1em;
+    font-weight: 700;
+}
+.table td {
+    padding: 1em;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    text-align: left;
+}
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+.table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 121, 0.04);
+}
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 121, 0.10);
+}
+.table td:nth-child(2) {
+    color: rgb(0, 0, 121);
 }
