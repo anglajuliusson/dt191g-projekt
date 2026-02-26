@@ -4,31 +4,35 @@
     ViewData["Title"] = "Lokaler";
 }
 
-<h2>Bokningsbara lokaler</h2>
-<p>Här kan du se lokaler som går att bokas av Idrottsföreningar.</p>
-<p>Kontrollera bland <a asp-controller="Home" asp-action="Bookings">bokningar</a> om lokalen är ledig det datum och tid du önskar.</p>
+<main class="facilities-main">
+    <h2>Bokningsbara lokaler</h2>
+    <div class="facilities-text">
+        <p>Här kan du se lokaler som går att bokas av Idrottsföreningar.</p>
+        <p>Kontrollera bland <a asp-controller="Home" asp-action="Bookings">bokningar</a> om lokalen är ledig det datum och tid du önskar.</p>
+    </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Lokal</th>
-            <th>Adress</th>
-            <th>Beskrivning</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Lokal</th>
+                <th>Adress</th>
+                <th>Beskrivning</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</main>
