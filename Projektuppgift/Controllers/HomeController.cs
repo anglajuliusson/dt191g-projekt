@@ -1,25 +1,44 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Projektuppgift.Data;
 
 namespace Projektuppgift.Controllers
 {
     public class HomeController : Controller
     {
         // GET: HomeController
+        private readonly ApplicationDbContext _context;
+
+        public HomeController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult Associations()
+
+        public async Task<IActionResult> Associations()
         {
-            return View();
+            var associations = await _context.Associations.ToListAsync();
+            return View(associations);
         }
-        public IActionResult Facilities()
+
+        public async Task<IActionResult> Facilities()
         {
-            return View();
+            var facilities = await _context.Facilities.ToListAsync();
+            return View(facilities);
         }
-        public IActionResult Bookings()
+
+        public async Task<IActionResult> Bookings()
         {
-            return View();
+            var bookings = await _context.Bookings
+                .Include(b => b.Facility)
+                .Include(b => b.Association)
+                .ToListAsync();
+
+            return View(bookings);
         }
     }
 }
