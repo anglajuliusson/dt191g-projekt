@@ -3,26 +3,27 @@
 @{
     ViewData["Title"] = "Idrottsföreningar i Arvidsjaur";
 }
+<main class="associations-main">
+    <h2>Idrottsföreningar i Arvidsjaur</h2>
 
-<h2>Idrottsföreningar i Arvidsjaur</h2>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Föreningsnamn</th>
-            <th>E-postadress</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactEmail)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Föreningsnamn</th>
+                <th>E-postadress</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactEmail)
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</main>
