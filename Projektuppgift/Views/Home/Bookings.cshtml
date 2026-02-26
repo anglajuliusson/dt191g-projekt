@@ -4,38 +4,42 @@
     ViewData["Title"] = "Bokningar av lokaler";
 }
 
-<h2>Aktuella bokningar</h2>
-<p>Här kan du se vilken förening som bokat vilken lokal och när.</p>
+<main class="bookings-main">
+    <h2>Aktuella bokningar</h2>
+    <div class="bookings-text">
+        <p>Här kan du se vilken förening som bokat vilken lokal och när.</p>
+    </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Lokal</th>
-            <th>Förening</th>
-            <th>Bokad från</th>
-            <th>Bokad till</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @(item.Facility?.Name)
-            </td>
-            <td>
-                @(item.Association?.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Lokal</th>
+                <th>Förening</th>
+                <th>Bokad från</th>
+                <th>Bokad till</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @(item.Facility?.Name)
+                </td>
+                <td>
+                    @(item.Association?.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</main>
