@@ -1,6 +1,41 @@
+@model IEnumerable<Projektuppgift.Models.Booking>
+
 @{
     ViewData["Title"] = "Bokningar av lokaler";
 }
 
-<h2>Bokningar av lokaler</h2>
+<h2>Aktuella bokningar</h2>
 <p>Här kan du se vilken förening som bokat vilken lokal och när.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Lokal</th>
+            <th>Förening</th>
+            <th>Bokad från</th>
+            <th>Bokad till</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @(item.Facility?.Name)
+            </td>
+            <td>
+                @(item.Association?.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
