@@ -34,3 +34,21 @@ nav ul {
     gap: 50px;
     justify-content: center;
 }
+/* Global design för main */
+main h2 {
+    color: rgb(0, 0, 121);
+    font-size: 30px;
+}
+/* Index - main */
+.index-main {
+    padding: 5em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.index-main p {
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+    margin-bottom: 2em;
+}
