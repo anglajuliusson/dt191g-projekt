@@ -40,5 +40,9 @@ namespace Projektuppgift.Controllers
 
             return View(bookings);
         }
+        public IActionResult Login()
+        {
+            return View();
+        }
     }
 }
