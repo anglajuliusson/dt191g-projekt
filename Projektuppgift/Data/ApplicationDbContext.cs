@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Projektuppgift.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Projektuppgift.Data;
 
-public class ApplicationDbContext : DbContext 
+public class ApplicationDbContext : IdentityDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {
 
