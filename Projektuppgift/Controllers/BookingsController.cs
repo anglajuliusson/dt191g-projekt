@@ -51,8 +51,8 @@ namespace Projektuppgift.Controllers
         // GET: Bookings/Create
         public IActionResult Create()
         {
-            ViewData["AssociationId"] = new SelectList(_context.Associations, "AssociationId", "AssociationId");
-            ViewData["FacilityId"] = new SelectList(_context.Facilities, "FacilityId", "FacilityId");
+            ViewData["AssociationId"] = new SelectList(_context.Associations, "AssociationId", "Name");
+            ViewData["FacilityId"] = new SelectList(_context.Facilities, "FacilityId", "Name");
             return View();
         }
 
