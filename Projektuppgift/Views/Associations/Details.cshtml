@@ -4,27 +4,23 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<main class="details">
+    <h2>Detaljer</h2>
 
-<div>
-    <h4>Association</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ContactEmail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ContactEmail)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.AssociationId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <dl class="row">
+            <dt class = "col-sm-2">Föreningsnamn: </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class = "col-sm-2">E-postadress: </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ContactEmail)
+            </dd>
+        </dl>
+    </div>
+    <div class="back-link-div">
+        <a class="edit-link" asp-action="Edit" asp-route-id="@Model?.AssociationId">Redigera</a> |
+        <a class="back-link" asp-action="Index">Tillbaka</a>
+    </div>
+</main>
