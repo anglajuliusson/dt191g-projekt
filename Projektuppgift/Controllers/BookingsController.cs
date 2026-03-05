@@ -78,8 +78,8 @@ namespace Projektuppgift.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AssociationId"] = new SelectList(_context.Associations, "AssociationId", "AssociationId", booking.AssociationId);
-            ViewData["FacilityId"] = new SelectList(_context.Facilities, "FacilityId", "FacilityId", booking.FacilityId);
+            ViewData["AssociationId"] = new SelectList(_context.Associations, "AssociationId", "Name", booking.AssociationId);
+            ViewData["FacilityId"] = new SelectList(_context.Facilities, "FacilityId", "Name", booking.FacilityId);
             return View(booking);
         }
 
@@ -133,8 +133,8 @@ namespace Projektuppgift.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AssociationId"] = new SelectList(_context.Associations, "AssociationId", "AssociationId", booking.AssociationId);
-            ViewData["FacilityId"] = new SelectList(_context.Facilities, "FacilityId", "FacilityId", booking.FacilityId);
+            ViewData["AssociationId"] = new SelectList(_context.Associations, "AssociationId", "Name", booking.AssociationId);
+            ViewData["FacilityId"] = new SelectList(_context.Facilities, "FacilityId", "Name", booking.FacilityId);
             return View(booking);
         }
 
