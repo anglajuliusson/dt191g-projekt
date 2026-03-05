@@ -63,6 +63,15 @@ namespace Projektuppgift.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BookingId,FacilityId,AssociationId,StartDateTime,EndDateTime,Status")] Booking booking)
         {
+            var overlap = _context.Bookings.Any(b =>
+                b.FacilityId == booking.FacilityId &&
+                booking.StartDateTime < b.EndDateTime && 
+                booking.EndDateTime > b.StartDateTime
+            );
+            if (overlap)
+            {
+                ModelState.AddModelError("", "Den valda lokalen är redan bokad under denna tidsperiod.");
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(booking);
