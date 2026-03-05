@@ -14,13 +14,19 @@
             </picture>
         @if (User.Identity?.IsAuthenticated == true)
         {
-            <form class="login" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post" style="display:inline;">
-                <button type="submit" class="logout">Logga ut</button>
-            </form>
+            <div class="header-links">
+                <a class="register" asp-area="Identity" asp-page="/Account/Register">Registrera</a>
+                <form class="login" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post" style="display:inline;">
+                    <button type="submit" class="logout">Logga ut</button>
+                </form>
+            </div>
         }
         else
         {
-            <a class="login" asp-area="Identity" asp-page="/Account/Login">Logga in</a>
+            <div class="header-links">
+                <a class="register" asp-area="Identity" asp-page="/Account/Register">Registrera</a>
+                <a class="login" asp-area="Identity" asp-page="/Account/Login">Logga in</a>
+            </div>
         }
         </div>
         <div class="header-second">
