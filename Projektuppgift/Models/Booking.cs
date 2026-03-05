@@ -6,7 +6,10 @@ public class Booking
 {
     public int BookingId { get; set; }
 
+    [Required(ErrorMessage = "Välj en lokal.")]
     public int FacilityId { get; set; }
+    
+    [Required(ErrorMessage = "Välj en förening.")]
     public Facility? Facility { get; set; }
 
     public int AssociationId { get; set; }
