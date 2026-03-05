@@ -27,10 +27,28 @@
             <nav>
                 <ul>
                     <li><a asp-controller="Home" asp-action="Index">Startsida</a></li>
-                    <li><a asp-controller="Home" asp-action="Associations">Föreningar</a></li>
-                    <li><a asp-controller="Home" asp-action="Facilities">Lokaler</a></li>
-                    <li><a asp-controller="Home" asp-action="Bookings">Bokningar</a></li>
-                    @* Bara för inloggade *@
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li><a asp-controller="Associations" asp-action="Index">Föreningar</a></li>
+                    } else {                    
+                        <li><a asp-controller="Home" asp-action="Associations">Föreningar</a></li>
+                    }
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li><a asp-controller="Facilities" asp-action="Index">Lokaler</a></li>
+                    } else {
+                        <li><a asp-controller="Home" asp-action="Facilities">Lokaler</a></li>
+                    }
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li><a asp-controller="Bookings" asp-action="Index">Bokningar</a></li>
+                    } else {
+                        <li><a asp-controller="Home" asp-action="Bookings">Bokningar</a></li>
+                    }
+
                     @if (User.Identity?.IsAuthenticated == true)
                     {
                         <li><a asp-controller="Bookings" asp-action="Create">Gör bokning</a></li>
