@@ -165,18 +165,22 @@ h3 {
 }
 /* --- Bokningssidan --- */
 
-.create {
+.create, 
+.edit {
     padding: 3em 5em;
 }
-.create p {
+.create p, 
+.edit p {
     max-width: 900px;
     margin: 0 auto 2em auto;
 }
-.create .row {
+.create .row, 
+.edit .row {
     display: flex;
     justify-content: center;
 }
-.create .col-md-4{
+.create .col-md-4, 
+.edit .col-md-4 {
     width: 100%;
     max-width: 520px;
     background-color: white;
@@ -185,27 +189,32 @@ h3 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.10);
     border: 1px solid rgba(0,0,0,0.08);
 }
-.create .form-group, .as {
+.create .form-group, .as, 
+.edit .form-group {
     margin-bottom: 1.2em;
 }
-.create .control-label {
+.create .control-label, 
+.edit .control-label {
     display: block;
     margin-bottom: 0.4em;
     font-weight: 700;
     color: rgb(0, 0, 121);
     text-align: left;
 }
-.create .form-control {
+.create .form-control, 
+.edit .form-control {
     width: 100%;
     padding: 0.75em;
     border: 1px solid rgba(0,0,0,0.25);
     border-radius: 6px;
 }
-.create .form-control:focus {
+.create .form-control:focus, 
+.edit .form-control:focus {
     outline: none;
     border-color: rgb(0, 0, 121);
 }
-.create .btn-primary {
+.create .btn-primary, 
+.edit .btn-primary {
     width: 100%;
     background-color: rgb(0, 0, 121);
     color: white;
@@ -214,16 +223,100 @@ h3 {
     border-radius: 6px;
     cursor: pointer;
 }
-.create .btn-primary:hover {
+.create .btn-primary:hover, 
+.edit .btn-primary:hover {
     background-color: rgb(0, 0, 160);
 }
-.create select, .create input {
+.create select, .create input, 
+.edit input {
     width: 100%;
     box-sizing: border-box;
 }
-.back-link {
+.back-link,
+.edit-link,
+.create-link,
+.details-link,
+.delete-link {
     color: rgb(0, 0, 121);
 }
 .back-link-div {
     margin-top: 2em;
+}
+/* Detaljsida */
+.details {
+    padding: 3em 5em;
+}
+.details h2 {
+    color: rgb(0, 0, 121);
+    margin-bottom: 1em;
+}
+.details > div:first-of-type {
+    max-width: 700px;
+    margin: 0 auto 2em auto;
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+/* Beskrivningslista */
+.details dl {
+    margin: 0;
+}
+.details dt {
+    font-weight: bold;
+    color: rgb(0, 0, 121);
+    margin-bottom: 0.3em;
+}
+.details dd {
+    margin: 0 0 1em 0;
+}
+/* --- Delete-sida --- */
+.delete {
+    padding: 3em 5em;
+}
+.delete h3 {
+    text-align: center;
+    color: darkred;
+    margin-bottom: 2em;
+}
+.delete > div {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+.delete dl {
+    margin-bottom: 2em;
+}
+.delete dt {
+    font-weight: bold;
+    color: rgb(0, 0, 121);
+    margin-bottom: 0.3em;
+}
+.delete dd {
+    margin: 0 0 1em 0;
+}
+.delete form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+/* Radera-knapp */
+.btn-danger {
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+.btn-danger:hover {
+    background-color: rgb(170, 0, 0);
 }
