@@ -333,20 +333,17 @@ h3 {
 .btn-danger:hover {
     background-color: rgb(170, 0, 0);
 }
-/* Felmeddelande för formulär */
-.validation-summary-errors {
-    color: darkred;
-    background-color: #ffe6e6;
-    border: 1px solid darkred;
-    padding: 0.8em;
-    border-radius: 5px;
-    margin-bottom: 1em;
+/* Alla valideringsfel */
+.text-danger {
+    color: crimson;
+    font-weight: bold;
 }
 .validation-summary-errors ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.validation-summary-errors li {
-    font-weight: bold;
+.validation-summary-errors,
+.field-validation-error {
+    color: crimson;
 }
