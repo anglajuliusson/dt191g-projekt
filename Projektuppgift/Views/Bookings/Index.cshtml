@@ -29,10 +29,10 @@
     @foreach (var item in Model) {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Facility.Name)
+                    @(item.Facility?.Name ?? "Saknas")
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Association.Name)
+                    @(item.Association?.Name ?? "Saknas")
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.StartDateTime)

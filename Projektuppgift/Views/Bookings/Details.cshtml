@@ -10,11 +10,11 @@
         <dl class="row">
             <dt class = "col-sm-2">Lokal:</dt>
             <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Facility.Name)
+                @(Model.Facility?.Name ?? "Saknas")
             </dd>
             <dt class = "col-sm-2">Förening:</dt>
             <dd class = "col-sm-10">
-                @Html.DisplayFor(model => model.Association.Name)
+                @(Model.Association?.Name ?? "Saknas")
             </dd>
             <dt class = "col-sm-2">Från:</dt>
             <dd class = "col-sm-10">
