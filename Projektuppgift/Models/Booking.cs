@@ -8,10 +8,9 @@ public class Booking
 
     [Required(ErrorMessage = "Välj en lokal.")]
     public int FacilityId { get; set; }
-    
-    [Required(ErrorMessage = "Välj en förening.")]
     public Facility? Facility { get; set; }
 
+    [Required(ErrorMessage = "Välj en förening.")]
     public int AssociationId { get; set; }
     public Association? Association { get; set; }
 
